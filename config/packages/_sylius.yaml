@@ -272,11 +272,11 @@ sylius_grid:
                 name:
                     type: string
                     label: 'Name'
-                image:
-                    type: twig
-                    label: 'Image'
-                    options:
-                        template: "bundles/SyliusAdminBundle/Brand/_logo.html.twig"
+                # image:
+                #     type: twig
+                #     label: 'Image'
+                #     options:
+                #         template: "bundles/SyliusAdminBundle/Brand/_logo.html.twig"
             actions:
                 main:
                     create:

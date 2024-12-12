@@ -1,0 +1,15 @@
+app_admin_brand:
+    resource: |
+        alias: app.brand
+        section: admin
+        templates: "@SyliusAdmin\\shared\\crud"
+        redirect: update
+        grid: app_admin_brand
+        vars:
+            all:
+                header: Brands
+                subheader: Brands
+            index:
+                icon: 'file image outline'
+    type: sylius.resource
+    prefix: /admin
