@@ -1,0 +1,7 @@
+{# this is a generic block that can be reused for other images #}
+{% block image_widget %}
+    {% if data.path|default(null) is not null %}
+        <img class="ui bordered image" src="{{ data.path|imagine_filter('sylius_small') }}" alt="{{ data.type }}" />
+    {% endif %}
+
+{% endblock %}

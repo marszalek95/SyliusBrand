@@ -1,10 +1,12 @@
-app_admin_brand:
+sylius_admin_brand:
     resource: |
-        alias: app.brand
+        alias: sylius.brand
         section: admin
         templates: "@SyliusAdmin\\shared\\crud"
         redirect: update
-        grid: app_admin_brand
+        grid: sylius_admin_brand
+        form:
+            type: App\Form\Type\BrandType
         vars:
             all:
                 header: Brands
