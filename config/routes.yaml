@@ -9,7 +9,6 @@ sylius_admin_brand:
             type: App\Form\Type\BrandType
         vars:
             all:
-                header: Brands
                 subheader: Brands
             index:
                 icon: 'file image outline'

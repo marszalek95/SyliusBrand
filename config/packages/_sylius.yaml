@@ -271,10 +271,10 @@ sylius_grid:
             fields:
                 name:
                     type: string
-                    label: 'Name'
+                    label: sylius.ui.name
                 image:
                     type: twig
-                    label: 'Image'
+                    label: sylius.ui.image
                     options:
                         template: "bundles/SyliusAdminBundle/Brand/_logo.html.twig"
             actions:
