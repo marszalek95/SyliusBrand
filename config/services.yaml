@@ -47,3 +47,14 @@ services:
             - '@sylius.uploader.image'
         tags:
             - { name: kernel.event_subscriber }
+
+    app.factory.product:
+        class: App\Factory\Product\ProductFactory
+        decorates: sylius.factory.product
+        arguments: ['@app.factory.product.inner']
+        public: false
+
+    app.form.extension.type.product:
+        class: App\Form\Extension\ProductTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\ProductBundle\Form\Type\ProductType }
