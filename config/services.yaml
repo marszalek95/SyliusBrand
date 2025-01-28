@@ -58,3 +58,10 @@ services:
         class: App\Form\Extension\ProductTypeExtension
         tags:
             - { name: form.type_extension, extended_type: Sylius\Bundle\ProductBundle\Form\Type\ProductType }
+
+    App\Form\Type\ProductBrandAutocompleteType:
+        tags: ['form.type']
+
+    App\Form\Type\ProductBrandType:
+        tags: ['form.type']
+    

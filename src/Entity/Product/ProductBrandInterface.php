@@ -4,17 +4,16 @@ namespace App\Entity\Product;
 
 use Sylius\Component\Product\Model\ProductInterface;
 use App\Entity\Brand\Brand;
+use App\Entity\Brand\BrandInterface;
+use Sylius\Component\Resource\Model\ResourceInterface;
 
-
-interface ProductBrandInterface
+interface ProductBrandInterface extends ResourceInterface
 {
-    public function getId(): ?int;
+    public function getProduct(): ?ProductInterface;
 
-    public function getProduct(): ProductInterface;
+    public function setProduct(?ProductInterface $product): self;
 
-    public function setProduct(ProductInterface $product): self;
+    public function getBrand(): ?BrandInterface;
 
-    public function getBrand(): Brand;
-
-    public function setBrand(Brand $brand): self;
+    public function setBrand(?BrandInterface $brand): self;
 }

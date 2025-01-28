@@ -11,7 +11,7 @@ use Sylius\Component\Core\Model\ImageAwareInterface;
 
 #[ORM\Entity(repositoryClass: BrandRepository::class)]
 #[ORM\Table(name: 'sylius_brand')]
-class Brand implements ResourceInterface, ImageAwareInterface
+class Brand implements ResourceInterface, ImageAwareInterface, BrandInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -46,7 +46,7 @@ class Brand implements ResourceInterface, ImageAwareInterface
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(?string $name): static
     {
         $this->name = $name;
 
@@ -58,7 +58,7 @@ class Brand implements ResourceInterface, ImageAwareInterface
         return $this->slug;
     }
 
-    public function setSlug(string $slug): static
+    public function setSlug(?string $slug): static
     {
         $this->slug = $slug;
 
