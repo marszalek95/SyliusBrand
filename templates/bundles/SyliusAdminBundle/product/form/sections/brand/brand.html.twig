@@ -1,7 +1,7 @@
 {% set productBrands = hookable_metadata.context.form.productBrands %}
 
 {% if productBrands.children %}
-    {{ form_row(productBrands) }}
+    {{ form_row(productBrands,  sylius_test_form_attribute('productBrands')) }}
 {% else %}
     {{ form_row(productBrands.vars.prototype, sylius_test_form_attribute('productBrands')) }}
 {% endif %}
