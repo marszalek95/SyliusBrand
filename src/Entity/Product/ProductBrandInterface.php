@@ -3,7 +3,6 @@
 namespace App\Entity\Product;
 
 use Sylius\Component\Product\Model\ProductInterface;
-use App\Entity\Brand\Brand;
 use App\Entity\Brand\BrandInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
