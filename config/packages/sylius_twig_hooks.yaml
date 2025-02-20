@@ -12,3 +12,8 @@ sylius_twig_hooks:
             brand:
                 template: 'bundles/SyliusAdminBundle/product/form/sections/brand/brand.html.twig'
                 priority: 0
+
+        'sylius_shop.base.header.navbar.menu':
+            brand:
+                template: 'bundles/SyliusShopBundle/brand/item.html.twig'
+                priority: 0

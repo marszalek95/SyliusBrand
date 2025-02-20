@@ -26,3 +26,11 @@ sylius_shop_product_brand:
     requirements:
         slug: .+(?<!/)
         brandSlug: .+(?<!/)
+
+sylius_shop_brands_show:
+    path: /{_locale}/brands
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product::showAction
+        _sylius:
+            template: "bundles/SyliusShopBundle/brand/show/show.html.twig"
