@@ -20,3 +20,9 @@ sylius_resource:
             classes:
                 model: App\Entity\Brand\Brand
                 form: App\Form\Type\BrandImageType
+
+        app.product_brand:
+            driver: doctrine/orm
+            classes:
+                model: App\Entity\Product\ProductBrand
+                repository: App\Repository\Product\ProductBrandRepository

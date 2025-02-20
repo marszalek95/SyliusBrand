@@ -14,3 +14,15 @@ sylius_admin_brand:
                 icon: 'file image outline'
     type: sylius.resource
     prefix: /admin
+
+sylius_shop_product_brand:
+    path: /{_locale}/brand/{slug}/{brandSlug}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product::indexAction
+        _sylius:
+            template: "bundles/SyliusShopBundle/brand/index.html.twig"
+            grid: sylius_shop_brand
+    requirements:
+        slug: .+(?<!/)
+        brandSlug: .+(?<!/)

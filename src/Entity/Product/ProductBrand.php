@@ -7,10 +7,11 @@ use Sylius\Component\Product\Model\ProductInterface;
 use App\Repository\Product\ProductBrandRepository;
 use App\Entity\Product\ProductBrandInterface;
 use App\Entity\Brand\BrandInterface;
+use Sylius\Resource\Model\ResourceInterface;
 
 #[ORM\Entity(repositoryClass: ProductBrandRepository::class)]
 #[ORM\Table(name: 'sylius_product_brand')]
-class ProductBrand implements ProductBrandInterface
+class ProductBrand implements ProductBrandInterface, ResourceInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

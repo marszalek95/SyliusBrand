@@ -1,14 +1,14 @@
 sylius_twig_hooks:
-  hooks:
-    'sylius_admin.product.update.content.form.side_navigation':
-      brand:
-        template: 'bundles/SyliusAdminBundle/product/form/side_navigation/brand.html.twig'
-        priority: 0
-    'sylius_admin.product.update.content.form.sections':
-      brand:
-        template: 'bundles/SyliusAdminBundle/product/form/sections/brand.html.twig'
-        priority: 0
-    'sylius_admin.product.update.content.form.sections.brand':
-      brand:
-        template: 'bundles/SyliusAdminBundle/product/form/sections/brand/brand.html.twig'
-        priority: 0
+    hooks:
+        'sylius_admin.product.update.content.form.side_navigation':
+            brand:
+                template: 'bundles/SyliusAdminBundle/product/form/side_navigation/brand.html.twig'
+                priority: 0
+        'sylius_admin.product.update.content.form.sections':
+            brand:
+                template: 'bundles/SyliusAdminBundle/product/form/sections/brand.html.twig'
+                priority: 0
+        'sylius_admin.product.update.content.form.sections.brand':
+            brand:
+                template: 'bundles/SyliusAdminBundle/product/form/sections/brand/brand.html.twig'
+                priority: 0

@@ -143,6 +143,7 @@ sylius_product:
         product:
             classes:
                 model: App\Entity\Product\Product
+                repository: App\Repository\Product\ProductRepository
             translation:
                 classes:
                     model: App\Entity\Product\ProductTranslation
@@ -261,29 +262,3 @@ sylius_user:
                 classes:
                     model: App\Entity\User\UserOAuth
 
-sylius_grid:
-    grids:
-        sylius_admin_brand:
-            driver:
-                name: doctrine/orm
-                options:
-                    class: App\Entity\Brand\Brand
-            fields:
-                name:
-                    type: string
-                    label: sylius.ui.name
-                image:
-                    type: twig
-                    label: sylius.ui.image
-                    options:
-                        template: "bundles/SyliusAdminBundle/Brand/_logo.html.twig"
-            actions:
-                main:
-                    create:
-                        type: create
-                        label: sylius.ui.create
-                item:
-                    update:
-                        type: update
-                    delete:
-                        type: delete

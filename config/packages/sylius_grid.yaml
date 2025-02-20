@@ -1,0 +1,73 @@
+sylius_grid:
+    grids:
+        sylius_admin_brand:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: App\Entity\Brand\Brand
+            fields:
+                name:
+                    type: string
+                    label: sylius.ui.name
+                image:
+                    type: twig
+                    label: sylius.ui.image
+                    options:
+                        template: "bundles/SyliusAdminBundle/Brand/_logo.html.twig"
+            actions:
+                main:
+                    create:
+                        type: create
+                        label: sylius.ui.create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+
+        app_brand:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: App\Entity\Product\ProductBrand
+
+        sylius_shop_brand:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%sylius.model.product.class%"
+                    repository:
+                        method: createShopListQueryBuilder
+                        arguments:
+                            channel: "expr:service('sylius.context.channel').getChannel()"
+                            taxon: "expr:notFoundOnNull(service('sylius.repository.taxon').findOneBySlug($slug, service('sylius.context.locale').getLocaleCode()))"
+                            locale: "expr:service('sylius.context.locale').getLocaleCode()"
+                            sorting: "expr:service('request_stack').getCurrentRequest().get('sorting', [])"
+                            includeAllDescendants: "expr:parameter('sylius_shop.product_grid.include_all_descendants')"
+                            brand: "expr:notFoundOnNull(service('sylius.repository.brand').findOneBySlug($brandSlug))"
+            sorting:
+                position: asc
+            limits: [9, 18, 27]
+            fields:
+                createdAt:
+                    type: datetime
+                    sortable: ~
+                position:
+                    type: string
+                    sortable: productTaxon.position
+                name:
+                    type: string
+                    sortable: translation.name
+                price:
+                    type: int
+                    sortable: channelPricing.price
+            filters:
+                search:
+                    type: shop_string
+                    label: false
+                    options:
+                        fields: [translation.name]
+                    form_options:
+                        type: contains
+
+
