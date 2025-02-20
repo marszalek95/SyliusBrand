@@ -32,9 +32,7 @@ sylius_twig_hooks:
 
         'sylius_shop.brand.index.content.body.main':
             header:
-                component: 'sylius_shop:product:show:header'
-                props:
-                    template: 'bundles/SyliusShopBundle/brand/index/content/body/main/header.html.twig'
+                component: 'BrandComponent'
                 priority: 300
             filters:
                 template: '@SyliusShop/product/index/content/body/main/filters.html.twig'
@@ -45,14 +43,6 @@ sylius_twig_hooks:
             pagination:
                 template: '@SyliusShop/product/index/content/body/main/pagination.html.twig'
                 priority: 0
-
-        'sylius_shop.brand.index.content.body.main.header':
-            image:
-                template: '@SyliusShop/product/index/content/body/main/header/image.html.twig'
-                priority: 300
-            name:
-                template: '@SyliusShop/product/index/content/body/main/header/name.html.twig'
-                priority: 100
             
 
         'sylius_shop.brand.index.content.body.main.filters':

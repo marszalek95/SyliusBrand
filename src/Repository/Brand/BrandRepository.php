@@ -9,7 +9,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\ResourceRepositoryTrait;
 use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
 
-class BrandRepository extends ServiceEntityRepository implements RepositoryInterface
+class BrandRepository extends ServiceEntityRepository implements RepositoryInterface, BrandRepositoryInterface
 {
     use ResourceRepositoryTrait;
 
