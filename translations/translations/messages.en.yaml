@@ -1,2 +1,3 @@
 sylius.ui.brands: 'Brands'
 sylius.ui.brand: 'Brand'
+sylius.ui.no_brand: 'No brand'

@@ -1,0 +1,7 @@
+{% if data.first.brand.name is defined %}
+    {{ data.first.brand.name }}
+{% else %}
+    <span class="text-danger">
+        {{ ux_icon('tabler:exclamation-circle') }} <i>{{ 'sylius.ui.no_brand'|trans }}</i>
+    </span>
+{% endif %}

@@ -13,7 +13,14 @@ sylius_twig_hooks:
                 template: 'bundles/SyliusAdminBundle/product/form/sections/brand/brand.html.twig'
                 priority: 0
 
+
         'sylius_shop.base.header.navbar.menu':
             brand:
                 template: 'bundles/SyliusShopBundle/brand/item.html.twig'
                 priority: 0
+
+
+        'sylius_shop.product.show.content.info.summary':
+            brand:
+                template: 'bundles/SyliusShopBundle/brand/show/brand.html.twig'
+                priority: 600
