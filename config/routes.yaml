@@ -3,15 +3,11 @@ sylius_admin_brand:
         alias: sylius.brand
         section: admin
         templates: "@SyliusAdmin\\shared\\crud"
+        except: ['show']
         redirect: update
         grid: sylius_admin_brand
         form:
             type: App\Form\Type\BrandType
-        vars:
-            all:
-                subheader: Brands
-            index:
-                icon: 'file image outline'
     type: sylius.resource
     prefix: /admin
 
@@ -31,6 +27,11 @@ sylius_shop_brands_show:
     path: /{_locale}/brands
     methods: [GET]
     defaults:
-        _controller: sylius.controller.product::showAction
+        _controller: sylius.controller.brand::indexAction
         _sylius:
             template: "bundles/SyliusShopBundle/brand/show/show.html.twig"
+            paginate: false
+            sortable: true
+            sorting:
+                name: asc
+     
