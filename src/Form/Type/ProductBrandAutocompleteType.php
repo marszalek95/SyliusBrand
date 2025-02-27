@@ -11,7 +11,7 @@ use Symfony\UX\Autocomplete\Form\AsEntityAutocompleteField;
 use Symfony\UX\Autocomplete\Form\BaseEntityAutocompleteType;
 
 #[AsEntityAutocompleteField(
-    alias: 'sylius_admin_product_brand',
+    alias: 'app_admin_product_brand',
     route: 'sylius_admin_entity_autocomplete',
 )]
 final class ProductBrandAutocompleteType extends AbstractType
@@ -27,7 +27,7 @@ final class ProductBrandAutocompleteType extends AbstractType
 
     public function getBlockPrefix(): string
     {
-        return 'sylius_admin_product_brand_autocomplete';
+        return 'app_admin_product_brand_autocomplete';
     }
 
     public function getParent(): string

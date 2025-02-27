@@ -2,13 +2,13 @@
     <div class="d-flex flex-column">
         {% set brandSlug = app.request.attributes.get('brandSlug') %}
         {% for child in taxon.enabledChildren %}
-            <a href="{{ path('sylius_shop_product_brand', {'slug': child.slug, 'brandSlug': brandSlug ,'_locale': child.translation.locale}) }}" class="d-inline-block py-1 link-reset" {{ sylius_test_html_attribute('vertical-menu-item') }}>
+            <a href="{{ path('app_shop_product_brand', {'slug': child.slug, 'brandSlug': brandSlug ,'_locale': child.translation.locale}) }}" class="d-inline-block py-1 link-reset" {{ sylius_test_html_attribute('vertical-menu-item') }}>
                 {{ child.name }}
             </a>
         {% endfor %}
 
         {% if taxon.parent is not empty and not taxon.parent.isRoot() and taxon.parent.enabled %}
-            <a href="{{ path('sylius_shop_product_brand', {'slug': taxon.parent.slug, 'brandSlug': brandSlug ,'_locale': taxon.parent.translation.locale}) }}" class="d-inline-block py-1 link-reset" {{ sylius_test_html_attribute('vertical-menu-go-level-up') }}>
+            <a href="{{ path('app_shop_product_brand', {'slug': taxon.parent.slug, 'brandSlug': brandSlug ,'_locale': taxon.parent.translation.locale}) }}" class="d-inline-block py-1 link-reset" {{ sylius_test_html_attribute('vertical-menu-go-level-up') }}>
                 {{ 'sylius.ui.go_level_up'|trans }}
             </a>
         {% endif %}

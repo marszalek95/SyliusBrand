@@ -19,8 +19,8 @@ final class ImageUploadSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            'sylius.brand.pre_create' => 'uploadImage',
-            'sylius.brand.pre_update' => 'uploadImage',
+            'app.brand.pre_create' => 'uploadImage',
+            'app.brand.pre_update' => 'uploadImage',
         ];
     }
 

@@ -25,6 +25,6 @@ class BrandType extends AbstractType
 
     public function getBlockPrefix(): string
     {
-        return 'sylius_admin_brand';
+        return 'app_admin_brand';
     }
 }

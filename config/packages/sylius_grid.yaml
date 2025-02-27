@@ -1,6 +1,6 @@
 sylius_grid:
     grids:
-        sylius_admin_brand:
+        app_admin_brand:
             driver:
                 name: doctrine/orm
                 options:
@@ -56,7 +56,7 @@ sylius_grid:
                 options:
                     class: App\Entity\Product\ProductBrand
 
-        sylius_shop_brand:
+        app_shop_brand:
             driver:
                 name: doctrine/orm
                 options:
@@ -69,7 +69,7 @@ sylius_grid:
                             locale: "expr:service('sylius.context.locale').getLocaleCode()"
                             sorting: "expr:service('request_stack').getCurrentRequest().get('sorting', [])"
                             includeAllDescendants: "expr:parameter('sylius_shop.product_grid.include_all_descendants')"
-                            brand: "expr:notFoundOnNull(service('sylius.repository.brand').findOneBySlug($brandSlug))"
+                            brand: "expr:notFoundOnNull(service('app.repository.brand').findOneBySlug($brandSlug))"
             sorting:
                 position: asc
             limits: [9, 18, 27]

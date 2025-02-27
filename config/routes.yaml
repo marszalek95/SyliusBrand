@@ -1,33 +1,33 @@
-sylius_admin_brand:
+app_admin_brand:
     resource: |
-        alias: sylius.brand
+        alias: app.brand
         section: admin
         templates: "@SyliusAdmin\\shared\\crud"
         except: ['show']
         redirect: update
-        grid: sylius_admin_brand
+        grid: app_admin_brand
         form:
             type: App\Form\Type\BrandType
     type: sylius.resource
     prefix: /admin
 
-sylius_shop_product_brand:
+app_shop_product_brand:
     path: /{_locale}/brand/{slug}/{brandSlug}
     methods: [GET]
     defaults:
         _controller: sylius.controller.product::indexAction
         _sylius:
             template: "bundles/SyliusShopBundle/brand/index.html.twig"
-            grid: sylius_shop_brand
+            grid: app_shop_brand
     requirements:
         slug: .+(?<!/)
         brandSlug: .+(?<!/)
 
-sylius_shop_brands_show:
+app_shop_brands_show:
     path: /{_locale}/brands
     methods: [GET]
     defaults:
-        _controller: sylius.controller.brand::indexAction
+        _controller: app.controller.brand::indexAction
         _sylius:
             template: "bundles/SyliusShopBundle/brand/show/show.html.twig"
             paginate: false

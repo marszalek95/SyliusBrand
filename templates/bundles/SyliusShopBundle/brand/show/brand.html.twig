@@ -4,13 +4,13 @@
 {% set brand = productBrand.first.brand %}    
     {% if productBrand.first.brand.image.path|default(null) is not null %}
         <div class="mb-4">
-            <a href="{{ path('sylius_shop_product_brand', {'brandSlug': brand.slug, 'slug': 'category'}) }}">
+            <a href="{{ path('app_shop_product_brand', {'brandSlug': brand.slug, 'slug': 'category'}) }}">
                 <img class="ui bordered image" src="{{ brand.image.path|imagine_filter('sylius_small') }}" alt="{{ brand.image.type }}" />
             </a>
         </div>
     {% else %}
         <div class="mb-4">
-            <a href="{{ path('sylius_shop_product_brand', {'brandSlug': brand.slug, 'slug': 'category'}) }}">
+            <a href="{{ path('app_shop_product_brand', {'brandSlug': brand.slug, 'slug': 'category'}) }}">
                 <h2 class="h3">{{ brand.name }}</h2>
             </a>
         </div>

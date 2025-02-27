@@ -10,7 +10,7 @@ sylius_resource:
 
     # Configure your resources
     resources:
-        sylius.brand:
+        app.brand:
             driver: doctrine/orm
             classes:
                 model: App\Entity\Brand\Brand

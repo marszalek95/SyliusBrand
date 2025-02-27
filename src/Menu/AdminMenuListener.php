@@ -16,7 +16,7 @@ final class AdminMenuListener
 
         $brandMenu
             ->addChild('new-subitem', [
-                'route' => 'sylius_admin_brand_index',
+                'route' => 'app_admin_brand_index',
             ])
             ->setLabel('sylius.ui.brands')
             ->setLabelAttribute('icon', 'tags')

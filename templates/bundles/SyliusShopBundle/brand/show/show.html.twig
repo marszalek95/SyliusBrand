@@ -34,7 +34,7 @@
                     <h2 class="group-title">{{ groupKey != 'hash' ? groupKey : '#' }}</h2>
                     <div class="brand-list">
                         {% for brand in groupedBrands[groupKey]|sort((a, b) => a.name|lower <=> b.name|lower) %}
-                            <a href="{{ path('sylius_shop_product_brand', {'brandSlug': brand.slug, 'slug': 'category'}) }}" class="brand-item">
+                            <a href="{{ path('app_shop_product_brand', {'brandSlug': brand.slug, 'slug': 'category'}) }}" class="brand-item">
                                 <span class="brand-name">{{ brand.name }}</span>
                             </a>
                         {% endfor %}
