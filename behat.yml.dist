@@ -53,7 +53,7 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
-                - "vendor/sylius/sylius/features"
+                # - "vendor/sylius/sylius/features"
                 - "features"
 
         SyliusLabs\SuiteTagsExtension: ~
