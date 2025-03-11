@@ -12,7 +12,7 @@ use Doctrine\Common\Collections\Collection;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'sylius_product')]
-class Product extends BaseProduct
+class Product extends BaseProduct implements ProductInterface
 {
     #[ORM\OneToMany(mappedBy: "product", targetEntity: ProductBrand::class, cascade: ["remove", "persist"], orphanRemoval: true)]
     private Collection $productBrands;

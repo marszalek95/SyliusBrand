@@ -22,4 +22,9 @@ class BrandRepository extends ServiceEntityRepository implements RepositoryInter
     {
         return $this->findOneBy(['slug' => $slug]);
     }
+    
+    public function findByName(string $name): ?BrandInterface
+    {
+        return $this->findOneBy(['name' => $name]);
+    }
 }
