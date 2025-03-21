@@ -87,12 +87,13 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "App\\Behat\\": "src/Behat/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Sylius\\Tests\\": "tests/"
         },
         "classmap": [
             "src/Kernel.php"

@@ -1,0 +1,29 @@
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true" />
+        <service id="Sylius\Behat\Service\SharedStorageInterface" alias="sylius.behat.shared_storage" />
+        <service id="Sylius\Behat\Page\Shop\Product\ShowPageInterface" alias="sylius.behat.page.shop.product.show" />
+
+        <service id="app.behat.context.ui.brand" class="App\Behat\Context\Setup\BrandContext">
+            <argument type="service" id="sylius.behat.shared_storage"/>
+            <argument type="service" id="app.factory.brand"/>
+            <argument type="service" id="app.repository.brand"/>
+            <argument type="service" id="sylius.generator.slug"/>
+        </service>
+
+        <service id="app.behat.context.ui.product_brand" class="App\Behat\Context\Setup\ProductBrandContext">
+            <argument type="service" id="sylius.behat.shared_storage"/>
+            <argument type="service" id="app.factory.product_brand"/>
+            <argument type="service" id="app.repository.product_brand"/>
+        </service>
+
+        <service id="app.behat.context.ui.shop.brand" class="App\Behat\Context\Ui\Shop\ProductContext">
+            <argument type="service" id="sylius.behat.page.shop.product.show"/>
+        </service>
+
+        <service id="app.behat.context.transform.brand" class="App\Behat\Transform\BrandContext">
+            <argument type="service" id="app.repository.brand"/>
+        </service>
+        
+    </services>
+</container>
