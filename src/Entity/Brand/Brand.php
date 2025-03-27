@@ -2,6 +2,7 @@
 
 namespace App\Entity\Brand;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\Brand\BrandRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ResourceInterface;
@@ -11,6 +12,7 @@ use Sylius\Component\Core\Model\ImageAwareInterface;
 
 #[ORM\Entity(repositoryClass: BrandRepository::class)]
 #[ORM\Table(name: 'sylius_brand')]
+#[ApiResource]
 class Brand implements ResourceInterface, ImageAwareInterface, BrandInterface
 {
     #[ORM\Id]
@@ -28,6 +30,11 @@ class Brand implements ResourceInterface, ImageAwareInterface, BrandInterface
 
     #[ORM\OneToOne(mappedBy: 'owner', targetEntity: BrandImage::class, cascade: ['all'], orphanRemoval: true)]
     protected ?BrandImage $image = null;
+
+    public function __toString(): string
+    {
+        return (string) $this->getName();
+    }
 
     public function getId(): ?int
     {

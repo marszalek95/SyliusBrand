@@ -1,0 +1,5 @@
+resources:
+    App\Entity\Brand\Brand:
+        routePrefix: /shop
+    App\Entity\Product\ProductBrand:
+        routePrefix: /shop

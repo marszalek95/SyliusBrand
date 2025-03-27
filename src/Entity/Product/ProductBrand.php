@@ -2,6 +2,7 @@
 
 namespace App\Entity\Product;
 
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Product\Model\ProductInterface;
 use App\Repository\Product\ProductBrandRepository;
@@ -11,6 +12,7 @@ use Sylius\Resource\Model\ResourceInterface;
 
 #[ORM\Entity(repositoryClass: ProductBrandRepository::class)]
 #[ORM\Table(name: 'sylius_product_brand')]
+#[ApiResource]
 class ProductBrand implements ProductBrandInterface, ResourceInterface
 {
     #[ORM\Id]
