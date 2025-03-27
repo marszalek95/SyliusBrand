@@ -1,0 +1,33 @@
+App\Entity\Channel\Channel:
+    channel_web:
+        code: 'WEB'
+        name: 'Web Channel'
+        hostname: 'localhost'
+        taxCalculationStrategy: 'order_items_based'
+        defaultLocale: '@locale_en'
+        baseCurrency: '@currency_usd'
+        locales: ['@locale_en']
+
+App\Entity\Locale\Locale:
+    locale_en:
+        code: 'en_US'
+
+App\Entity\Currency\Currency:
+    currency_usd:
+        code: 'USD'
+        
+App\Entity\Product\Product:
+    product_shoes:
+        code: 'lone_peak'
+        enabled: true
+        channels: ['@channel_web']
+
+App\Entity\Brand\Brand:
+    brand_altra:
+        name: 'Altra'
+        slug: 'altra'
+
+App\Entity\Product\ProductBrand:
+    product_brand_altra:
+        product: '@product_shoes'
+        brand: '@brand_altra'

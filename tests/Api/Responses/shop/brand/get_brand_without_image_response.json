@@ -1,0 +1,9 @@
+{
+    "@context": "\/api\/v2\/contexts\/Brand",
+    "@id": "\/api\/v2\/shop\/brands\/@integer@",
+    "@type": "Brand",
+    "id": "@integer@",
+    "name": "Altra",
+    "slug": "altra",
+    "image": null
+}

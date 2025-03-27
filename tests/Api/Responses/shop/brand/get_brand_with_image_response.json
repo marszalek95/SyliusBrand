@@ -1,0 +1,18 @@
+{
+    "@context": "\/api\/v2\/contexts\/Brand",
+    "@id": "\/api\/v2\/shop\/brands\/@integer@",
+    "@type": "Brand",
+    "id": "@integer@",
+    "name": "Altra",
+    "slug": "altra",
+    "image": {
+        "@type": "BrandImage",
+        "@id": "/api/v2/.well-known/genid/@string@",
+        "brand": "\/api\/v2\/shop\/brands\/@integer@",
+        "id": "@integer@",
+        "type": "default",
+        "file": null,
+        "path": "@string@.startsWith('http').contains('sylius_original').endsWith('altra.jpg')",
+        "owner": "\/api\/v2\/shop\/brands\/@integer@"
+    }
+}

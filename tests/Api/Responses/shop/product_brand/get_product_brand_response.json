@@ -1,0 +1,8 @@
+{
+    "@context": "\/api\/v2\/contexts\/ProductBrand",
+    "@id": "\/api\/v2\/shop\/product-brands\/@integer@",
+    "@type": "ProductBrand",
+    "id": "@integer@",
+    "brand": "\/api\/v2\/shop\/brands\/@integer@",
+    "product": "\/api\/v2\/shop\/products\/lone_peak"
+}
