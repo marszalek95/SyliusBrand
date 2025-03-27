@@ -9,6 +9,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Model\ImageAwareInterface;
+use App\Entity\Brand\BrandImageInterface;
 
 #[ORM\Entity(repositoryClass: BrandRepository::class)]
 #[ORM\Table(name: 'sylius_brand')]
@@ -28,8 +29,8 @@ class Brand implements ResourceInterface, ImageAwareInterface, BrandInterface
     #[Assert\NotBlank]
     private ?string $slug = null;
 
-    #[ORM\OneToOne(mappedBy: 'owner', targetEntity: BrandImage::class, cascade: ['all'], orphanRemoval: true)]
-    protected ?BrandImage $image = null;
+    #[ORM\OneToOne(mappedBy: 'owner', targetEntity: BrandImageInterface::class, cascade: ['all'], orphanRemoval: true)]
+    protected ?BrandImageInterface $image = null;
 
     public function __toString(): string
     {

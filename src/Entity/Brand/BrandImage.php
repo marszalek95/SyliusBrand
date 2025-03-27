@@ -9,7 +9,7 @@ use Sylius\Component\Core\Model\Image;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'sylius_brand_image')]
-class BrandImage extends Image
+class BrandImage extends Image implements BrandImageInterface
 {
     #[ORM\OneToOne(inversedBy: 'image', targetEntity: Brand::class)]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]

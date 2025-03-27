@@ -18,7 +18,7 @@ sylius_resource:
 
         app.brand_image:
             classes:
-                model: App\Entity\Brand\Brand
+                model: App\Entity\Brand\BrandImage
                 form: App\Form\Type\BrandImageType
 
         app.product_brand:
