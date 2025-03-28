@@ -1,0 +1,97 @@
+.brand-index {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.alphabet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid #eee;
+}
+
+.alphabet-link {
+    color: #999;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    min-width: 2rem;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.alphabet-link.has-brands {
+    color: #2a52be;
+    background: #f0f4ff;
+}
+
+.alphabet-link:hover {
+    background: #2a52be;
+    color: white;
+}
+
+.brand-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.brand-group {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.group-title {
+    color: #333;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #2a52be;
+}
+
+.brand-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.brand-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.brand-item:hover {
+    background: #f8f9fa;
+    transform: translateX(4px);
+}
+
+.brand-logo {
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .brand-groups {
+        grid-template-columns: 1fr;
+    }
+    
+    .alphabet-nav {
+        justify-content: center;
+    }
+}
